@@ -4,11 +4,11 @@ import { format } from "date-fns";
 const BookingModal = ({ date, treatment }) => {
   const { name, slot } = treatment;
 
-  const handleBooking = event => {
+  const handleBooking = (event) => {
     event.preventDefault();
-    const slot = event.target.slot.value
-    console.log(slot)
-  }
+    const slot = event.target.slot.value;
+    console.log(slot);
+  };
 
   return (
     <div>
@@ -16,53 +16,46 @@ const BookingModal = ({ date, treatment }) => {
       <div className="modal text-left">
         <div className="modal-box">
           <h3 className="font-bold text-lg">{name}</h3>
-          <div className="mt-5">
-            <form onSubmit={handleBooking}>
+          <form
+            onSubmit={handleBooking}
+            className="grid grid-cols-1 gap-3 mt-10"
+          >
             <input
-            name="date"
               type="text"
-              value={format(date, "PP")}
               disabled
-              placeholder="Type here"
-              className="input input-bordered input-md w-full mb-3 "
+              value={date}
+              className="input w-full input-bordered "
             />
-            {/* Time */}
-            <select name="slot" className="select font-normal w-full input-bordered mb-3">
-              <option disabled selected>
-                Pick a time
-              </option>
-              {
-                slot.map(slot => <option value={slot}>{slot}</option>)
-              }
+            <select name="slot" className="select select-bordered w-full">
+              {slot.map((slot) => (
+                <option value={slot}>{slot}</option>
+              ))}
             </select>
             <input
-            name="name"
+              name="name"
               type="text"
-              placeholder="Full Name"
-              className="input input-bordered input-md w-full mb-3"
+              placeholder="Your Name"
+              className="input w-full input-bordered"
             />
             <input
-            name="phone"
+              name="email"
+              type="email"
+              placeholder="Email Address"
+              className="input w-full input-bordered"
+            />
+            <input
+              name="phone"
               type="text"
               placeholder="Phone Number"
-              className="input input-bordered input-md w-full mb-3"
+              className="input w-full input-bordered"
             />
+            <br />
             <input
-            name="email"
-              type="text"
-              placeholder="Email"
-              className="input input-bordered input-md w-full"
+              className="btn btn-accent w-full"
+              type="submit"
+              value="Submit"
             />
-            </form>
-          </div>
-          <div className="modal-action">
-            <label
-              htmlFor="my-modal"
-              className="w-full btn bg-grey border-none"
-            >
-              Submit!
-            </label>
-          </div>
+          </form>
         </div>
       </div>
     </div>
