@@ -6,6 +6,7 @@ import Footer from "./Pages/Footer/Footer";
 import { Route, Routes } from "react-router-dom";
 import Appointment from "./Pages/Appointment/Appointment";
 import Login from "./Pages/Login/Login";
+import SignUp from "./SignUp/SignUp";
 
 
 function App() {
@@ -16,6 +17,7 @@ function App() {
         <Route path="/home" element={<Home></Home>}></Route>
         <Route path="/appointment" element={<Appointment></Appointment>}></Route>
         <Route path='/login' element={<Login></Login>}></Route>
+        <Route path='/signup' element={<SignUp></SignUp>}></Route>
       </Routes>
       <Footer></Footer>
     </div>
