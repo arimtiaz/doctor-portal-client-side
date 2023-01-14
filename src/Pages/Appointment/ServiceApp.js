@@ -18,14 +18,12 @@ const ServiceApp = ({ service, setTreatment }) => {
           {slot.length} {slot.length > 1 ? "spaces" : "space"} available
         </p>
         <div className="card-actions justify-center">
-          <label
-            htmlFor="my-modal"
-            onClick={() => setTreatment(service)}
-            disabled={slot.length === 0}
-            className="btn bg-green hover:bg-greenHover border-none w-3/4"
-          >
-            BOOK APPOINTMENT
-          </label>
+        <label
+                        htmlFor="booking-modal"
+                        disabled={slot.length === 0}
+                        onClick={() => setTreatment(service)}
+                        className="btn bg-green text-white uppercase border-none hover:bg-greenHover"
+                    >Book Appointment</label>
         </div>
       </div>
     </div>
