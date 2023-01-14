@@ -15,7 +15,8 @@ import "react-toastify/dist/ReactToastify.css";
 function App() {
   return (
     <div className="App">
-     <Navbar></Navbar>
+      <Navbar></Navbar>
+    
         <Routes>
           <Route path="/home" element={<Home></Home>}></Route>
           <Route
@@ -25,6 +26,7 @@ function App() {
           <Route path="/login" element={<Login></Login>}></Route>
           <Route path="/signup" element={<SignUp></SignUp>}></Route>
         </Routes>
+    <ToastContainer />
     </div>
   );
 }
